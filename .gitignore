@@ -1,0 +1,23 @@
+# Visual Studio Code #
+*.code-workspace
+
+# Node specific #
+node_modules
+
+# build files #
+dist
+.build
+
+# IDE generated files #
+.idea
+.settings
+.vscode
+
+# Testing specific #
+coverage
+
+# secrets #
+.env
+
+# Mac #
+.DS_Store
