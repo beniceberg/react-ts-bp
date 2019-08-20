@@ -6,11 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-module.exports = () => {
-  const env = dotenv.config().parsed;
-  const host = env.HOST || 'localhost';
-  const port = env.PORT || '4001';
-
+module.exports = env => {
   const rootPath = path.resolve(__dirname, '..');
   const basePath = `${rootPath}/.env`;
   const envPath = `${basePath}.${env.ENVIRONMENT}`;
@@ -22,12 +18,11 @@ module.exports = () => {
   }, {});
 
   return {
-    devtool: 'source-map',
-    entry: ['babel-polyfill', './src/index.tsx'], // babel-polyfill so that you can use async await
-    output: {
-      path: `${rootPath}/dist`, // after build, path to file
-      filename: 'main.bundle.js', // after build, file name
-      publicPath: '', // for routing in production
+    entry: ['@babel/polyfill', './src/index.tsx'],
+    optimization: {
+      splitChunks: {
+        chunks: 'all',
+      },
     },
     module: {
       rules: [
@@ -65,20 +60,16 @@ module.exports = () => {
     },
     resolve: {
       alias: {
-        '/': path.resolve(__dirname, '../src/'),
-        // '/store': `${rootPath}/src/store`,
-        // '/services': `${rootPath}/src/services`,
+        '/': `${rootPath}/src`,
+        '/App': `${rootPath}/src/App`,
+        '/store': `${rootPath}/src/store`,
+        '/services': `${rootPath}/src/services`,
       },
       extensions: ['.tsx', '.ts', '.js', '.jsx'],
     },
-    devServer: {
-      historyApiFallback: true, // in dev makes sure when routing, it doesn't try to call that path on server
-      host,
-      port,
-    },
     plugins: [
       new HtmlWebpackPlugin({
-        title: 'React Ts Boilerplate',
+        title: 'React TypeScript',
         template: path.resolve(__dirname, '../src/index.html'),
         inject: true,
         minify: {
@@ -88,7 +79,7 @@ module.exports = () => {
       }),
       new ForkTsCheckerWebpackPlugin(),
       new CleanWebpackPlugin(),
-      new webpack.DefinePlugin(envKeys), // make environment variables accessable
+      new webpack.DefinePlugin(envKeys),
     ],
   };
 };

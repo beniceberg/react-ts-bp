@@ -5,9 +5,9 @@
   "main": "index.tsx",
   "scripts": {
     "test": "jest",
-    "start": "webpack-dev-server --mode development --config config/webpack.common.config.js --open",
-    "build:dev": "cross-env NODE_ENV=development webpack --env.ENVIRONMENT=development --mode development --config config/webpack.common.config.js",
-    "build:prod": "cross-env NODE_ENV=production webpack --env.ENVIRONMENT=production --mode production --config config/webpack.common.config.js"
+    "start": "webpack-dev-server --open",
+    "build:dev": "cross-env NODE_ENV=development webpack",
+    "build:prod": "cross-env NODE_ENV=production webpack"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
+    "@babel/polyfill": "^7.4.4",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.3.3",
