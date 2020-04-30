@@ -17,7 +17,7 @@ dist
 coverage
 
 # secrets #
-.env
+# .env # uncomment line
 
 # Mac #
 .DS_Store

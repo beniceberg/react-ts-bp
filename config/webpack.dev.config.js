@@ -6,7 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const host = 'localhost';
 const port = '8081';
 
-module.exports = merge(common({ ENVIRONMENT: 'development' }), {
+module.exports = merge(common(), {
   devtool: 'source-map',
   output: {
     path: path.join(__dirname, '../dist'),

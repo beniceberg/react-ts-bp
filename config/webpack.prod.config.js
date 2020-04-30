@@ -5,15 +5,22 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const common = require('./webpack.common.config.js');
 const pkg = require('../package.json');
 
-const outputFileTemplateSuffix = `${pkg.version}`;
-
-module.exports = merge(common({ ENVIRONMENT: 'production' }), {
+module.exports = merge(common(), {
   mode: 'production',
   output: {
     path: path.join(__dirname, '../dist'),
-    filename: `[name].[hash].${outputFileTemplateSuffix}.js`,
+    filename: `[name].[hash].${pkg.version}.js`,
   },
   optimization: {
-    minimizer: [new UglifyJsPlugin(), new OptimizeCSSAssetsPlugin()],
+    minimizer: [
+      new UglifyJsPlugin({
+        uglifyOptions: {
+          compress: {
+            unused: false,
+          },
+        },
+      }),
+      new OptimizeCSSAssetsPlugin(),
+    ],
   },
 });

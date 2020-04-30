@@ -6,7 +6,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>Hello World</h1>
+        <h1>Welcome to my React, TypeScript and Jest Boilerplate</h1>
       </div>
     );
   }

@@ -13,10 +13,13 @@
     "noUnusedLocals": true,
     "isolatedModules": true,
     "esModuleInterop": true,
+    "baseUrl": "./",
     "paths": {
-      "/*": ["./src/*"]
+      "@pages/*": ["src/pages/*"],
+      "@organisms/*": ["src/organisms/*"],
+      "@molecules/*": ["src/molecules/*"],
+      "@atoms/*": ["src/atoms/*"]
     },
-    "baseUrl": ".",
     "jsx": "react"
   },
   "include": ["src/**/*"],
