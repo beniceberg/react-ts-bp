@@ -52,6 +52,10 @@ module.exports = () => {
     },
     resolve: {
       alias: {
+        '@store': `${rootPath}/src/store`,
+        '@reducers': `${rootPath}/src/store/reducers`,
+        '@actions': `${rootPath}/src/store/actions`,
+        '@selectors': `${rootPath}/src/store/selectors`,
         '@pages': `${rootPath}/src/pages`,
         '@organisms': `${rootPath}/src/organisms`,
         '@molecules': `${rootPath}/src/molecules`,

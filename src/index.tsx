@@ -1,15 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
+import App from './App';
+import { store } from '@store';
+import { history } from '@reducers';
 import './index.css';
 
-class App extends React.Component {
-  render() {
-    return (
-      <div>
-        <h1>Welcome to my React, TypeScript and Jest Boilerplate</h1>
-      </div>
-    );
-  }
-}
-
-ReactDOM.render(<App />, document.getElementById('app'));
+render(<App {...{ store, history }} />, document.getElementById('app'));

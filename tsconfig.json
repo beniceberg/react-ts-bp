@@ -15,6 +15,11 @@
     "esModuleInterop": true,
     "baseUrl": "./",
     "paths": {
+      "@store": ["src/store/index"],
+      "@reducers": ["src/store/reducers/index"],
+      "@reducers/*": ["src/store/reducers/*"],
+      "@actions/*": ["src/store/actions/*"],
+      "@selectors/*": ["src/store/selectors/*"],
       "@pages/*": ["src/pages/*"],
       "@organisms/*": ["src/organisms/*"],
       "@molecules/*": ["src/molecules/*"],

@@ -18,9 +18,18 @@
   "author": "Ben Eisenberg <ben.iceberg@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "@types/history": "^4.7.2",
+    "@types/react-redux": "^7.1.2",
+    "@types/react-router-dom": "^4.3.4",
+    "connected-react-router": "^6.5.2",
     "dotenv": "^8.1.0",
+    "history": "^4.9.0",
     "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react-dom": "^16.9.0",
+    "react-redux": "^7.1.0",
+    "react-router-dom": "^5.0.1",
+    "redux": "^4.0.4",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",

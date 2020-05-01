@@ -12,6 +12,10 @@ module.exports = {
     "\\.(css|less)$": "identity-obj-proxy",
     "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
     
+    "^store(.*)$": "<rootDir>/src/store$1",
+    "^reducers(.*)$": "<rootDir>/src/store/reducers$1",
+    "^actions(.*)$": "<rootDir>/src/store/actions$1",
+    "^selectors(.*)$": "<rootDir>/src/store/selectors$1",
     "^pages(.*)$": "<rootDir>/src/pages$1",
     "^organisms(.*)$": "<rootDir>/src/organisms$1",
     "^molecules(.*)$": "<rootDir>/src/molecules$1",
